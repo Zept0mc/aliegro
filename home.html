@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="widp=device-widp, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <title>Aliegro</title>
+</head>
+<body>
+  <header>
+    <h1>Aliegro</h1>
+
+  </header>
+  <div class="topnav">
+    <a class="active" href="./home.html">Strona główna</a>
+    <a href="./offers.html">Dodaj ofertę</a>
+    <a href="./news.html">Aktualności</a>
+    <a href="./workers.html">Potencjalni pracownicy</a>
+
+    <a href="./help.html">Pomoc</a>
+    
+  </div>
+ 
+  <main>
+      <div class="grid">
+          <p class="tr">Przedmiot</p>
+          <p class="tr">Cena</p>
+          <p class="tr">Data końca aukcji</p>
+          <p class="tr">Podoba Ci się produkt?</p>
+   
+          <p class="td">Lampa antyk (XVII w.)</p>
+          <p class="td" id="lampPriceShow">100.-</p>
+          <p class="td">Maj 31, 2023</p>
+          <button id="buyBtn1" class="onHoverPointer">Kup</button>
+ 
+          <p class="td">Złoty zegarek Armani AR1893</p>
+          <p class="td" id="clockPriceShow">500.-</p>
+          <p class="td">Kwiecień 7, 2023</p>
+          <button id="buyBtn2" class="onHoverPointer">Kup</button>
+
+          <p class="td">Płótno Gogha "Drzewa oliwkowe"</p>
+          <p class="td" id="imagePriceShow">1,000.-</p>
+          <p class="td">Kwiecień 14, 2023</p>
+          <button  id="buyBtn3" class="onHoverPointer">Kup</button>
+
+          <p class="td">Skrzypce Antonio Stadivari</p>
+          <p class="td" id="musicPriceShow">4000.-</p>
+          <p class="td">Sierpień 1, 2023</p>
+          <button id="buyBtn4" class="onHoverPointer">Kup</button>
+        </div>
+    <br>
+
+    <button id="btn-add-auction"><a href="./offers.html">Dodaj swoją akcję</a></button>
+    
+    <div class="secondGrid">
+      <div>
+        <img src="./lampa.png" alt="" class="img">
+      </div>
+      <div>
+        <img src="./obraz.png" alt="" class="img">
+      </div>
+      <div class="clock">
+        <img src="./zegarek.png" alt="" class="img">
+        
+      </div>
+      <div>
+        <img src="./shopping.png" alt="" class="img">
+      </div>
+      <div>
+        <button id="buyBtn5" class="btn-buy">Kup</button>
+      </div>
+      <div>
+        <button id="buyBtn6" class="btn-buy">Kup</button>
+      </div>
+      <div>
+        <button id="buyBtn7" class="btn-buy">Kup</button>
+      </div>
+      <div>
+        <button id="buyBtn8" class="btn-buy">Kup</button>
+      </div>
+    </div>
+
+
+  </main>
+<div class="footer">
+  <footer>
+    <p>&copy;<a href="https://github.com/Zept0mc">Github - Autor</p>
+  </footer>
+</div>
+    <script>
+      const buyBtn1 = document.querySelector("#buyBtn1")
+      const buyBtn2 = document.querySelector("#buyBtn2")
+      const buyBtn3 = document.querySelector("#buyBtn3")
+      const buyBtn4 = document.querySelector("#buyBtn4")
+      const buyBtn5 = document.querySelector("#buyBtn5")
+      const buyBtn6 = document.querySelector("#buyBtn6")
+      const buyBtn7 = document.querySelector("#buyBtn7")
+      const buyBtn8 = document.querySelector("#buyBtn8")
+
+      const lampPriceShow = document.querySelector("#lampPriceShow")
+      const imagePriceShow = document.querySelector("#imagePriceShow")
+      const clockPriceShow = document.querySelector("#clockPriceShow")
+      const musicPriceShow = document.querySelector("#musicPriceShow")
+      
+      var lampPrice = 100;
+      var imagePrice = 500;
+      var clockPrice = 1000;
+      var musicPrice = 4000;
+
+      buyBtn1.addEventListener("click",()=>{
+        var lampNewPrice = window.prompt("Do jakiej stawki chcesz podbić licytację tego produktu?")
+        console.log(lampNewPrice)
+        if(parseInt(lampNewPrice) - 50 >= lampPrice){
+          lampPrice = lampNewPrice;
+          lampPriceShow.innerHTML = `${lampNewPrice}.-`;
+        } else{
+          window.alert("Cena ustawiona przez Ciebie musi być minimum 50 zł wyższa od poprzedniej")
+        }
+      })
+
+      buyBtn2.addEventListener("click",()=>{
+        var clockNewPrice = window.prompt("Do jakiej stawki chcesz podbić licytację tego produktu?")
+        console.log(clockNewPrice)
+        if(parseInt(clockNewPrice) - 50 >= clockPrice){
+          clockPrice = clockNewPrice;
+          clockPriceShow.innerHTML = `${clockNewPrice}.-`;
+        } else{
+          window.alert("Cena ustawiona przez Ciebie musi być minimum 50 zł wyższa od poprzedniej")
+        }
+      })
+      buyBtn3.addEventListener("click",()=>{
+        var imageNewPrice = window.prompt("Do jakiej stawki chcesz podbić licytację tego produktu?")
+        console.log(imageNewPrice)
+        if(parseInt(imageNewPrice) - 50 >= imagePrice){
+          imagePrice = imageNewPrice;
+          imagePriceShow.innerHTML = `${imageNewPrice}.-`;
+        } else{
+          window.alert("Cena ustawiona przez Ciebie musi być minimum 50 zł wyższa od poprzedniej")
+        }
+      })
+      buyBtn4.addEventListener("click",()=>{
+        var musicNewPrice = window.prompt("Do jakiej stawki chcesz podbić licytację tego produktu?")
+        console.log(musicNewPrice)
+        if(parseInt(musicNewPrice) - 50 >= musicPrice){
+          musicPrice = lampNewPrice;
+          musicPriceShow.innerHTML = `${musicNewPrice}.-`;
+        } else{
+          window.alert("Cena ustawiona przez Ciebie musi być minimum 50 zł wyższa od poprzedniej")
+        }
+      })
+      buyBtn5.addEventListener("click",()=>{
+        var lampNewPrice = window.prompt("Do jakiej stawki chcesz podbić licytację tego produktu? (Obecna cena to 100zł)")
+        console.log(lampNewPrice)
+        if(parseInt(lampNewPrice) - 50 >= lampPrice){
+          lampPrice = lampNewPrice;
+          lampPriceShow.innerHTML = `${lampNewPrice}.-`;
+        } else{
+          window.alert("Cena ustawiona przez Ciebie musi być minimum 50 zł wyższa od poprzedniej")
+        }
+      })
+
+      buyBtn6.addEventListener("click",()=>{
+        var clockNewPrice = window.prompt("Do jakiej stawki chcesz podbić licytację tego produktu?")
+        console.log(clockNewPrice)
+        if(parseInt(clockNewPrice) - 50 >= clockPrice){
+          clockPrice = clockNewPrice;
+          clockPriceShow.innerHTML = `${clockNewPrice}.-`;
+        } else{
+          window.alert("Cena ustawiona przez Ciebie musi być minimum 50 zł wyższa od poprzedniej")
+        }
+      })
+      buyBtn7.addEventListener("click",()=>{
+        var imageNewPrice = window.prompt("Do jakiej stawki chcesz podbić licytację tego produktu?")
+        console.log(imageNewPrice)
+        if(parseInt(imageNewPrice) - 50 >= imagePrice){
+          imagePrice = imageNewPrice;
+          imagePriceShow.innerHTML = `${imageNewPrice}.-`;
+        } else{
+          window.alert("Cena ustawiona przez Ciebie musi być minimum 50 zł wyższa od poprzedniej")
+        }
+      })
+      buyBtn9.addEventListener("click",()=>{
+        var musicNewPrice = window.prompt("Do jakiej stawki chcesz podbić licytację tego produktu?")
+        console.log(musicNewPrice)
+        if(parseInt(musicNewPrice) - 50 >= musicPrice){
+          musicPrice = lampNewPrice;
+          musicPriceShow.innerHTML = `${musicNewPrice}.-`;
+        } else{
+          window.alert("Cena ustawiona przez Ciebie musi być minimum 50 zł wyższa od poprzedniej")
+        }
+      })
+
+
+    </script>
+</body>
+</html>

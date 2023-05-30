@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <title>Aliegro</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body class="OFFERbody">
+    <header>
+        <h1>Aliegro</h1>
+     
+    </header>
+
+    <div class="topnav">
+      <a href="./home.html">Strona główna</a>
+      <a class="active" href="./offers.html">Dodaj ofertę</a>
+      <a href="./news.html">Aktualności</a>
+      <a href="./workers.html">Potencjalni pracownicy</a>
+
+      <a href="./help.html">Pomoc</a>
+
+    </div>
+    <main>
+      <div class="OFFERcenter">
+        <p>
+          Tutaj możesz dodać swoją ofertę (nie będzie ona widoczna dla ciebie)
+        </p>
+        <hr class="OFFERhr"><label class="OFFERlabel" for="name" class="labelInp">Imię: </label
+        ><br><input class="OFFERinput" type="text" name="name" id="name" /><br />
+        <hr class="OFFERhr"><label class="OFFERlabel" for="surname" class="labelInp">Nazwisko: </label
+        ><br><input class="OFFERinput" type="text" name="surname" id="surname" /><br />
+        <hr class="OFFERhr"><label class="OFFERlabel" for="productName" class="labelInp">Nazwa produktu: </label
+        ><br><input class="OFFERinput" type="text" name="productName" id="productName" /><br />
+        <hr class="OFFERhr"><label class="OFFERlabel" for="minPrice" class="labelInp">Początkowa cena: </label
+        ><br><input class="OFFERinput" type="number" name="minPrice" id="minPrice" /><br />
+        <hr class="OFFERhr"><label class="OFFERlabel" for="endingDate" class="labelInp">Data zakończenia aukcji </label
+        ><br><input class="OFFERinput" type="date" name="endingDate" id="endingDate" /><br />
+  
+
+
+  
+        <hr class="OFFERhr"><label class="OFFERlabel" for="mail" class="labelInp">Email: </label
+        ><br><input class="OFFERinput" type="email" name="mail" id="mail" /><br />
+        <hr class="OFFERhr">
+        <button id="btn" class="OFFERsubmit">Wyślij <br>(wszystkie pola są obowiązkowe)</button>
+      </div>
+    </main>
+    <div class="footer">
+      <footer>
+        <p>&copy;<a href="https://github.com/Zept0mc">Github - Autor</p>
+      </footer>
+    </div>
+    <script>
+      const btn = document.querySelector("#btn");
+
+btn.addEventListener("click", start);
+
+function start() {
+  let name = document.querySelector("#name").value.trim();
+  let surname = document.querySelector("#surname").value.trim();
+  let productName = document.querySelector("#productName").value.trim();
+  let startPrice = document.querySelector("#minPrice").value.trim();
+  let endDate = document.querySelector("#endingDate").value.trim();
+  let mail = document.querySelector("#mail").value.trim();
+
+  if (
+    name === "" ||
+    surname === "" ||
+    productName === "" ||
+    startPrice === "" ||
+    endDate === "" ||
+    mail === ""
+  ) {
+    window.alert("Wypełnij wszystkie pola")
+    name = "";
+    surname = "";
+    productName = "";
+    startPrice = "";
+    endDate = "";
+    mail = "";
+    document.querySelector("#name").value = "";
+    document.querySelector("#surname").value = "";
+    document.querySelector("#productName").value = "";
+    document.querySelector("#minPrice").value = "";
+    document.querySelector("#endingDate").value = "";
+    document.querySelector("#mail").value = "";
+  }
+}
+
+    </script>
+
+</body>
+</html>
