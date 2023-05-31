@@ -22,18 +22,64 @@
 
       <a class="active" href="./help.html">Pomoc</a>
  
-    </div>
-    <div class="footer">
-      <footer>
-        <p>&copy;<a href="https://github.com/Zept0mc">Github - Autor</p>
-      </footer>
-    </div>
-    <h1>(C)HUJ CI W DUPĘ, TO PROSTA STRONA NIE POTRZEBUJESZ POMOCY</h1>
-    <script>
-
-
-
- 
-    </script>
-</body>
-</html>
+      <main>
+        <div class="OFFERcenter">
+          <p>
+            Tutaj możesz dodać swoją ofertę (nie będzie ona widoczna dla ciebie)
+          </p>
+          <hr class="OFFERhr"><label class="OFFERlabel" for="name" class="labelInp">Imię: </label
+          ><br><input class="OFFERinput" type="text" name="name" id="name" /><br />
+          <hr class="OFFERhr"><label class="OFFERlabel" for="surname" class="labelInp">Nazwisko: </label
+          ><br><input class="OFFERinput" type="text" name="surname" id="surname" /><br />
+          <hr class="OFFERhr"><label class="OFFERlabel" for="productName" class="labelInp">Opis problemu: </label
+          ><br><textarea class="OFFERinput" name="productName" id="productName" rows="20" cols="40"></textarea><br />
+          <hr class="OFFERhr"><label class="OFFERlabel" for="mail" class="labelInp">Email: </label
+          ><br><input class="OFFERinput" type="email" name="mail" id="mail" /><br />
+          <hr class="OFFERhr">
+          <button id="btn" class="OFFERsubmit">Wyślij <br>(wszystkie pola są obowiązkowe)</button>
+        </div>
+      </main>
+      <div class="footer">
+        <footer>
+          <p>&copy;<a href="https://github.com/Zept0mc">Github - Autor</p>
+        </footer>
+      </div>
+      <script>
+        const btn = document.querySelector("#btn");
+  
+  btn.addEventListener("click", start);
+  
+  function start() {
+    let name = document.querySelector("#name").value.trim();
+    let surname = document.querySelector("#surname").value.trim();
+    let problem = document.querySelector("#productName")
+    let mail = document.querySelector("#mail").value.trim();
+  
+    if (
+      name === "" ||
+      surname === "" ||
+      problem === "" ||
+      mail === ""
+    ) {
+      window.alert("Wypełnij wszystkie pola")
+      name = "";
+      surname = "";
+      problem = "";
+      mail = "";
+      document.querySelector("#name").value = "";
+      document.querySelector("#surname").value = "";
+      document.querySelector("#problem").value = "";
+      document.querySelector("#mail").value = "";
+    } else{
+      document.querySelector("#name").value = "";
+      document.querySelector("#surname").value = "";
+      document.querySelector("#problem").value = "";
+      document.querySelector("#mail").value = "";
+      window.alert("Wysłano zgłoszenie")
+    }
+  }
+  
+      </script>
+  
+  </body>
+  </html>
