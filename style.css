@@ -403,7 +403,8 @@ a:link{
 }
 
 .jest23mamDosc{
-  position: absolute;
+  text-align: center;
+  justify-content: center;
   top: 50%;
   left: 50%;
   display: flex;
