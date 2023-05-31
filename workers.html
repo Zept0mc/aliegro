@@ -23,15 +23,70 @@
         <a href="./help.html">Pomoc</a>
       
       </div>
+      <main>
+        <div class="WORKERScenter">
+          <p style="font-size: large;">
+            Tutaj możesz wypełnić formularz który zostanie rozpatrzony pod względem przyjęcia jako pracownika do firmy Aliegro.
+          </p>
+          <hr class="WORKERShr"><label class="WORKERSlabel" for="name" class="labelInp">Imię: </label
+          ><br><input class="WORKERSinput" type="text" name="name" id="name" /><br />
+          <hr class="WORKERShr"><label class="WORKERSlabel" for="surname" class="labelInp">Nazwisko: </label
+          ><br><input class="WORKERSinput" type="text" name="surname" id="surname" /><br />
 
+          <hr class="WORKERShr"><label class="WORKERSlabel" for="minPrice" class="labelInp">Proponowane wynagrodzenie brutto: </label
+          ><br><input class="WORKERSinput" type="number" name="minPrice" id="minPrice" /><br />
+          <hr class="WORKERShr"><label class="WORKERSlabel" for="endingDate" class="labelInp">Data urodzin </label
+          ><br><input class="WORKERSinput" type="date" name="endingDate" id="endingDate" /><br />
+          <hr class="WORKERShr"><label class="WORKERSlabel" for="mail" class="labelInp">Email: </label
+          ><br><input class="WORKERSinput" type="email" name="mail" id="mail" /><br />
+          <hr class="WORKERShr"><br>
+          
+          <button id="btn" class="WORKERSsubmit">Wyślij <br>(wszystkie pola są obowiązkowe)</button>
+        </div>
+      </main>
       
       <div class="footer">
         <footer>
           <p>&copy;<a href="https://github.com/Zept0mc">Github - Autor</p>
         </footer>
       </div>
-    <script>
-
-    </script>
+      <script>
+        const btn = document.querySelector("#btn");
+  
+  btn.addEventListener("click", start);
+  
+  function start() {
+    let name = document.querySelector("#name").value.trim();
+    let surname = document.querySelector("#surname").value.trim();
+    let productName = document.querySelector("#productName").value.trim();
+    let startPrice = document.querySelector("#minPrice").value.trim();
+    let endDate = document.querySelector("#endingDate").value.trim();
+    let mail = document.querySelector("#mail").value.trim();
+  
+    if (
+      name === "" ||
+      surname === "" ||
+      productName === "" ||
+      startPrice === "" ||
+      endDate === "" ||
+      mail === ""
+    ) {
+      window.alert("Wypełnij wszystkie pola")
+      name = "";
+      surname = "";
+      productName = "";
+      startPrice = "";
+      endDate = "";
+      mail = "";
+      document.querySelector("#name").value = "";
+      document.querySelector("#surname").value = "";
+      document.querySelector("#productName").value = "";
+      document.querySelector("#minPrice").value = "";
+      document.querySelector("#endingDate").value = "";
+      document.querySelector("#mail").value = "";
+    }
+  }
+  
+      </script>
 </body>
 </html>
