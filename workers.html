@@ -34,9 +34,9 @@
           ><br><input class="WORKERSinput" type="text" name="surname" id="surname" /><br />
 
           <hr class="WORKERShr"><label class="WORKERSlabel" for="minPrice" class="labelInp">Proponowane wynagrodzenie brutto: </label
-          ><br><input class="WORKERSinput" type="number" name="minPrice" id="minPrice" /><br />
+          ><br><input class="WORKERSinput" type="number" name="minPrice" id="minSalary" /><br />
           <hr class="WORKERShr"><label class="WORKERSlabel" for="endingDate" class="labelInp">Data urodzin </label
-          ><br><input class="WORKERSinput" type="date" name="endingDate" id="endingDate" /><br />
+          ><br><input class="WORKERSinput" type="date" name="endingDate" id="birthDate" /><br />
           <hr class="WORKERShr"><label class="WORKERSlabel" for="mail" class="labelInp">Email: </label
           ><br><input class="WORKERSinput" type="email" name="mail" id="mail" /><br />
           <hr class="WORKERShr"><br>
@@ -58,32 +58,35 @@
   function start() {
     let name = document.querySelector("#name").value.trim();
     let surname = document.querySelector("#surname").value.trim();
-    let productName = document.querySelector("#productName").value.trim();
-    let startPrice = document.querySelector("#minPrice").value.trim();
-    let endDate = document.querySelector("#endingDate").value.trim();
+    let startSalary = document.querySelector("#minSalary").value.trim();
+    let endDate = document.querySelector("#birthDate").value.trim();
     let mail = document.querySelector("#mail").value.trim();
   
     if (
       name === "" ||
       surname === "" ||
-      productName === "" ||
-      startPrice === "" ||
+      startSalary === "" ||
       endDate === "" ||
       mail === ""
     ) {
       window.alert("Wypełnij wszystkie pola")
       name = "";
       surname = "";
-      productName = "";
-      startPrice = "";
+      startSalary = "";
       endDate = "";
       mail = "";
       document.querySelector("#name").value = "";
       document.querySelector("#surname").value = "";
-      document.querySelector("#productName").value = "";
-      document.querySelector("#minPrice").value = "";
+      document.querySelector("#minSalary").value = "";
       document.querySelector("#endingDate").value = "";
       document.querySelector("#mail").value = "";
+    } else{
+      document.querySelector("#name").value = "";
+      document.querySelector("#surname").value = "";
+      document.querySelector("#minSalary").value = "";
+      document.querySelector("#endingDate").value = "";
+      document.querySelector("#mail").value = "";
+      window.alert("Wysłano aplikację")
     }
   }
   
