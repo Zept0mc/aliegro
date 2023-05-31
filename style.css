@@ -401,3 +401,11 @@ a:link{
   background-color: rgb(255, 136, 0);
   color: rgb(39, 39, 39);
 }
+
+.jest23mamDosc{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+}
