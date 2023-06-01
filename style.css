@@ -58,7 +58,7 @@ header {
 .footer{
   display: fixed;
   justify-content: center;
-  position: absolute;
+  position: fixed;
   top: 1;
   bottom: 0;
   width: 100%;
